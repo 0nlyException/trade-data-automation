@@ -8,7 +8,7 @@
             <entry key="class" type="xstring" value="FSLocation"/>
             <entry key="location_present" type="xboolean" value="true"/>
             <entry key="file_system_type" type="xstring" value="LOCAL"/>
-            <entry key="path" type="xstring" value="C:\n8n-local"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution"/>
         </config>
     </config>
     <config key="internal_node_subsettings">
@@ -19,7 +19,7 @@
             <config key="path">
                 <entry key="location_present" type="xboolean" value="true"/>
                 <entry key="file_system_type" type="xstring" value="LOCAL"/>
-                <entry key="path" type="xstring" value="C:\n8n-local"/>
+                <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution"/>
             </config>
             <config key="file_system_chooser__Internals">
                 <entry key="has_fs_port" type="xboolean" value="false"/>
@@ -35,31 +35,34 @@
         </config>
         <config key="file_folder_variables">
             <config key="variable_names">
-                <entry key="array-size" type="xint" value="6"/>
+                <entry key="array-size" type="xint" value="7"/>
                 <entry key="0" type="xstring" value="rawData"/>
                 <entry key="1" type="xstring" value="output"/>
                 <entry key="2" type="xstring" value="archive"/>
                 <entry key="3" type="xstring" value="databases"/>
                 <entry key="4" type="xstring" value="n8n"/>
                 <entry key="5" type="xstring" value="backups"/>
+                <entry key="6" type="xstring" value="logs"/>
             </config>
             <config key="path_values">
-                <entry key="array-size" type="xint" value="6"/>
+                <entry key="array-size" type="xint" value="7"/>
                 <entry key="0" type="xstring" value="RAW_INPUT"/>
                 <entry key="1" type="xstring" value="OUTPUT_FILES"/>
                 <entry key="2" type="xstring" value="ARCHIVE_RAWDATA"/>
                 <entry key="3" type="xstring" value="DATABASES"/>
                 <entry key="4" type="xstring" value="N8N"/>
                 <entry key="5" type="xstring" value="BACKUPS"/>
+                <entry key="6" type="xstring" value="logs"/>
             </config>
             <config key="file_extensions">
-                <entry key="array-size" type="xint" value="6"/>
+                <entry key="array-size" type="xint" value="7"/>
                 <entry key="0" type="xstring" value=""/>
                 <entry key="1" type="xstring" value=""/>
                 <entry key="2" type="xstring" value=""/>
                 <entry key="3" type="xstring" value=""/>
                 <entry key="4" type="xstring" value=""/>
                 <entry key="5" type="xstring" value=""/>
+                <entry key="6" type="xstring" value=""/>
             </config>
         </config>
     </config>

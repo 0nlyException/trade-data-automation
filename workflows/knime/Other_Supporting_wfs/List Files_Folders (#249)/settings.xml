@@ -51,6 +51,10 @@
     <config key="variables"/>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
     <entry key="state" type="xstring" value="CONFIGURED"/>
+    <config key="nodecontainer_message">
+        <entry key="type" type="xstring" value="ERROR"/>
+        <entry key="message" type="xstring" value="Execute failed: The specified folder C:\n8n-local\RAW_INPUT does not exist."/>
+    </config>
     <entry key="factory" type="xstring" value="org.knime.filehandling.utility.nodes.listpaths.ListFilesAndFoldersNodeFactory"/>
     <entry key="node-name" type="xstring" value="List Files/Folders"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Filehandling Nodes"/>
