@@ -1,0 +1,125 @@
+{
+  "name": "Global_Error_Handler",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "eedbd9fe-9ad7-48b6-906d-8e8b317b4866",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "daphnieanjonette@gmail.com",
+        "subject": "Workflow Failure Alert",
+        "message": "=<p><strong>Failed Workflow:</strong> {{ $json.workflow.name }}</p> <p><strong>Failing Node:</strong> {{ $json.execution.error.node.name }}</p> <p><strong>Error Message:</strong> {{ $json.execution.error.message }}</p> <p><strong>Direct Execution URL:</strong> <a href=\"{{ $json.execution.url }}\">{{ $json.execution.url }}</a></p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        16
+      ],
+      "id": "2cebdadf-9678-4f9c-904a-811863795eb1",
+      "name": "Send a message",
+      "webhookId": "1cb188fb-73c8-4701-a8de-2d347a2af9ed",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "VDDvQHKkoKCDy4D9",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Error Trigger": [
+      {
+        "json": {
+          "execution": {
+            "id": "555",
+            "url": "http://localhost:5678/workflow/ka1cYWREyvFqSSg4/executions/555",
+            "error": {
+              "level": "warning",
+              "tags": {},
+              "timestamp": 1788923840541,
+              "context": {
+                "itemIndex": 0
+              },
+              "functionality": "regular",
+              "name": "NodeOperationError",
+              "node": {
+                "parameters": {
+                  "executeOnce": true,
+                  "command": "=cmd.exe /c \"echo active > \"C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt\" & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\""
+                },
+                "type": "n8n-nodes-base.executeCommand",
+                "typeVersion": 1,
+                "position": [
+                  0,
+                  0
+                ],
+                "id": "2f5a9b6a-9d87-4bad-a5aa-926297a66f58",
+                "name": "Execute Command"
+              },
+              "messages": [],
+              "message": "Command failed: cmd.exe /c \"echo active > \"C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt\" & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\"\nThe filename, directory name, or volume label syntax is incorrect.\r\n",
+              "stack": "NodeOperationError: Command failed: cmd.exe /c \"echo active > \"C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt\" & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\"\nThe filename, directory name, or volume label syntax is incorrect.\r\n\n    at ExecuteContext.execute (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-nodes-base\\nodes\\ExecuteCommand\\ExecuteCommand.node.ts:101:12)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at WorkflowExecute.executeNode (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1048:9)\n    at WorkflowExecute.runNode (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1239:11)\n    at C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1687:27\n    at C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:2339:11"
+            },
+            "lastNodeExecuted": "Execute Command",
+            "mode": "webhook",
+            "executionContext": {
+              "version": 1,
+              "establishedAt": 1788923701391,
+              "source": "webhook",
+              "redaction": {
+                "version": 1,
+                "policy": "none"
+              },
+              "triggerNode": {
+                "name": "Webhook1",
+                "type": "n8n-nodes-base.webhook"
+              }
+            }
+          },
+          "workflow": {
+            "id": "ka1cYWREyvFqSSg4",
+            "name": "Phase1_Main"
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "9be6ccb2-312a-4161-95c1-cb1e278c7fa6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
+  },
+  "id": "wbmkoXY4sJvl5RvQ",
+  "tags": []
+}

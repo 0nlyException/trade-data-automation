@@ -1,11 +1,5 @@
 {
-  "updatedAt": "2026-07-09T05:27:35.852Z",
-  "createdAt": "2026-06-04T08:23:00.815Z",
-  "id": "dVnU2OHHFKihCbAO",
   "name": "Phase2_Classification",
-  "description": null,
-  "active": true,
-  "isArchived": false,
   "nodes": [
     {
       "parameters": {
@@ -15,10 +9,10 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1.1,
       "position": [
-        80,
-        272
+        -1232,
+        336
       ],
-      "id": "ccf116e4-a92f-489b-b7de-925d090fa5ec",
+      "id": "266b14b9-18b8-40a3-beaf-ea68ed6c0cb4",
       "name": "Extract from File5"
     },
     {
@@ -106,10 +100,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        2192,
-        272
+        880,
+        336
       ],
-      "id": "6edafa66-1067-4c94-87ed-a679da1b7aae",
+      "id": "de5eb988-d9f7-4320-9be6-417a4433a862",
       "name": "Switch",
       "alwaysOutputData": true
     },
@@ -121,10 +115,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        368,
-        272
+        -944,
+        336
       ],
-      "id": "e3e231f9-da5a-41de-8409-988ff282a0fa",
+      "id": "6479bde4-eaf1-48b0-a6d0-aa62fa6c8bd6",
       "name": "Split Out1"
     },
     {
@@ -134,10 +128,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1296,
-        720
+        -16,
+        784
       ],
-      "id": "16d66154-76d9-44da-a82e-ee8e00fb9ba1",
+      "id": "22695c14-ae31-42ea-8719-058df407d49c",
       "name": "Strip Data for AI"
     },
     {
@@ -151,42 +145,11 @@
       "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
       "typeVersion": 1,
       "position": [
-        1024,
-        272
+        -288,
+        336
       ],
-      "id": "5e559abc-18b3-4dff-a200-b9df09a4ebe2",
+      "id": "6a668cc1-a897-4c67-8bbf-8bf69425decb",
       "name": "SplitInBatches-Advanced"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "OH3HqIRkz0m1PPnF",
-          "mode": "list",
-          "cachedResultUrl": "/workflow/OH3HqIRkz0m1PPnF",
-          "cachedResultName": "AI Process"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {},
-          "matchingColumns": [],
-          "schema": [],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "mode": "each",
-        "options": {
-          "waitForSubWorkflow": true
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.3,
-      "position": [
-        1888,
-        720
-      ],
-      "id": "2a8ec9f5-af07-4851-ae53-39512c2c692f",
-      "name": "Call 'AI Process'"
     },
     {
       "parameters": {
@@ -195,10 +158,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1312,
-        -64
+        0,
+        0
       ],
-      "id": "fbafeb63-0d85-407a-af89-21ee8253f9f0",
+      "id": "3d39f0ea-7e13-4140-9efe-d26ccc80738b",
       "name": "Empty Row filter"
     },
     {
@@ -210,10 +173,10 @@
       "type": "n8n-nodes-sqlite.sqlite",
       "typeVersion": 1,
       "position": [
-        1680,
-        288
+        368,
+        352
       ],
-      "id": "d09ba282-92f5-49fa-a3e5-ddbee124bee8",
+      "id": "996db3b9-5245-4628-a301-9a9611ad885d",
       "name": "Retrieve-DB-Models",
       "executeOnce": false,
       "notesInFlow": false,
@@ -226,10 +189,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1600,
-        720
+        288,
+        784
       ],
-      "id": "100853a4-91d2-40fb-98e1-00815d4e3814",
+      "id": "4e61e8d4-ea8f-4c57-ac81-c6bfa0ec1bb9",
       "name": "Making batches of 10"
     },
     {
@@ -249,10 +212,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        3056,
-        592
+        1744,
+        656
       ],
-      "id": "a98aad62-cf0a-47ce-ae89-e2994dd50048",
+      "id": "bb205669-07b6-48aa-921d-0a325d227639",
       "name": "Merge- AI OUT"
     },
     {
@@ -262,10 +225,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        3312,
-        272
+        2000,
+        336
       ],
-      "id": "e7f77ae9-4975-4779-a77e-690fef95ddd8",
+      "id": "5ad24679-87fb-4734-a9f7-c9a0baa292b4",
       "name": "APPEND - ALL ROWS"
     },
     {
@@ -280,10 +243,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        2480,
-        1040
+        1168,
+        1104
       ],
-      "id": "8ff4b024-21eb-4b2d-9fe4-efce0ca62c22",
+      "id": "a47a6605-c263-4050-b33f-43a7218c3272",
       "name": "HTTP Request"
     },
     {
@@ -294,10 +257,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2128,
-        1040
+        816,
+        1104
       ],
-      "id": "0614e3fb-d99f-45f0-b3ba-314d8945d76e",
+      "id": "8547427a-0cc1-467c-a1e7-ef43612da2ee",
       "name": "Aggregate"
     },
     {
@@ -314,10 +277,10 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -208,
-        272
+        -1520,
+        336
       ],
-      "id": "810a9938-ba89-4b6f-b1d5-4cd334e264b4",
+      "id": "d72e260d-b4c4-474c-be52-7539b851a21a",
       "name": "When Executed by Another Workflow"
     },
     {
@@ -327,10 +290,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        2848,
-        720
+        1536,
+        784
       ],
-      "id": "5a21e4ed-79cf-4def-b0a7-91a203157d36",
+      "id": "cc2696cb-3492-4c8e-8b82-c5ca98768adf",
       "name": "Merge"
     },
     {
@@ -340,10 +303,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1936,
-        288
+        624,
+        352
       ],
-      "id": "c38e941f-8bf7-4d8a-aa8b-aadb0b880ef1",
+      "id": "d4411c88-6d7a-4617-964c-c2ab0c49c2ec",
       "name": "DB-Matching"
     },
     {
@@ -353,10 +316,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2640,
-        288
+        1328,
+        352
       ],
-      "id": "6f23d035-b650-4640-8e11-0f917a1e2181",
+      "id": "db6efc1e-503a-4cb4-854a-2a7a215ee004",
       "name": "mapping_partial"
     },
     {
@@ -366,24 +329,24 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2640,
-        80
+        1328,
+        144
       ],
-      "id": "fa1c1443-4108-4419-bc1a-f1bf02c65a2a",
+      "id": "00004810-4d01-498d-b2ab-d265a8ba0de2",
       "name": "mapping_exact"
     },
     {
       "parameters": {
-        "fileSelector": "=C:/n8n-local/knime_variable_config.json",
+        "fileSelector": "=C:\\TRADE_DATA\\Local-Execution\\knime_variable_config.json",
         "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        1248,
-        288
+        -64,
+        352
       ],
-      "id": "a1b9449f-621f-4edd-9270-56d87720c723",
+      "id": "63ee689a-28a9-40e2-9ef2-188a6405b05d",
       "name": "Read config"
     },
     {
@@ -394,10 +357,10 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1.1,
       "position": [
-        1440,
-        288
+        128,
+        352
       ],
-      "id": "e0a4d61d-0a22-468c-8cc1-d830b42ac668",
+      "id": "6142ec14-7a88-4366-b08e-96cf6326ea8e",
       "name": "Extract from File"
     },
     {
@@ -407,13 +370,45 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        688,
-        272
+        -624,
+        336
       ],
-      "id": "d89884ce-7f98-4107-80dd-f435836ea6e8",
+      "id": "7377ae3e-5dba-460e-b57e-62e0c3f1e4f7",
       "name": "Add Unique ID"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "xe899v2LXNpyhLeR",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/xe899v2LXNpyhLeR",
+          "cachedResultName": "AI_Process"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        576,
+        784
+      ],
+      "id": "2b8efd9e-8123-415b-ba36-2d713ce88c69",
+      "name": "Call 'AI_Process'"
     }
   ],
+  "pinData": {},
   "connections": {
     "Extract from File5": {
       "main": [
@@ -496,27 +491,6 @@
         ]
       ]
     },
-    "Call 'AI Process'": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Empty Row filter": {
-      "main": [
-        []
-      ]
-    },
     "Retrieve-DB-Models": {
       "main": [
         [
@@ -532,7 +506,7 @@
       "main": [
         [
           {
-            "node": "Call 'AI Process'",
+            "node": "Call 'AI_Process'",
             "type": "main",
             "index": 0
           }
@@ -670,46 +644,38 @@
           }
         ]
       ]
+    },
+    "Call 'AI_Process'": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate",
     "timeSavedMode": "fixed",
-    "saveDataSuccessExecution": "all",
-    "saveExecutionProgress": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "availableInMCP": false,
+    "errorWorkflow": "wbmkoXY4sJvl5RvQ",
+    "saveDataSuccessExecution": "all"
   },
-  "staticData": null,
-  "meta": null,
-  "pinData": {},
-  "versionId": "28b88c99-ef57-4a68-8a69-908eaceb7a8c",
-  "activeVersionId": "28b88c99-ef57-4a68-8a69-908eaceb7a8c",
-  "versionCounter": 741,
-  "triggerCount": 0,
-  "tags": [],
-  "shared": [
-    {
-      "updatedAt": "2026-06-04T08:23:00.815Z",
-      "createdAt": "2026-06-04T08:23:00.815Z",
-      "role": "workflow:owner",
-      "workflowId": "dVnU2OHHFKihCbAO",
-      "projectId": "ySMohz6WFKH5tAbg",
-      "project": {
-        "updatedAt": "2026-05-19T07:10:33.827Z",
-        "createdAt": "2026-05-19T07:09:02.777Z",
-        "id": "ySMohz6WFKH5tAbg",
-        "name": "Siranj ks <siranj.sasi@rohde-schwarz.com>",
-        "type": "personal",
-        "icon": null,
-        "description": null,
-        "creatorId": "cc3354fe-08cb-411e-8459-4a7fa20e3c8b"
-      }
-    }
-  ],
-  "versionMetadata": {
-    "name": "Version 28b88c99",
-    "description": ""
-  }
+  "versionId": "b2c48da9-ef36-4751-97f8-4f2824ac250e",
+  "meta": {
+    "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
+  },
+  "id": "0W3igVhQgWLoWTU0",
+  "tags": []
 }
