@@ -92,7 +92,7 @@
         <config key="styles"/>
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
-    <entry key="state" type="xstring" value="IDLE"/>
+    <entry key="state" type="xstring" value="EXECUTED"/>
     <entry key="factory" type="xstring" value="org.knime.json.node.filehandling.reader.JSONReaderNodeFactory"/>
     <entry key="node-name" type="xstring" value="JSON Reader"/>
     <entry key="node-bundle-name" type="xstring" value="JSON related functionality for KNIME"/>
@@ -109,20 +109,19 @@
         <config key="Data Table"/>
     </config>
     <entry key="name" type="xstring" value="JSON Reader"/>
-    <entry key="hasContent" type="xboolean" value="false"/>
+    <entry key="hasContent" type="xboolean" value="true"/>
     <entry key="isInactive" type="xboolean" value="false"/>
     <config key="ports">
         <config key="port_1">
             <entry key="index" type="xint" value="1"/>
-            <entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 1, Cols: 1"/>
+            <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<<<<<<< Updated upstream
-        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
-=======
         <entry key="file_store_id" type="xstring" value="ebdc0ce9-d4c4-4162-b0cd-2f30cb2c77b5"/>
->>>>>>> Stashed changes
     </config>
 </config>
