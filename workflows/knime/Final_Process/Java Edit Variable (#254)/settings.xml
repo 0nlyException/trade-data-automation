@@ -55,6 +55,10 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<<<<<<< Updated upstream
         <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+=======
+        <entry key="file_store_id" type="xstring" value="4ca2903a-ddda-47b4-ae63-c5d38b52dae1"/>
+>>>>>>> Stashed changes
     </config>
 </config>

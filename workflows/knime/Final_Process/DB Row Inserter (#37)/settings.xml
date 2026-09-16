@@ -134,11 +134,24 @@
         </config>
         <config key="port_2">
             <entry key="index" type="xint" value="2"/>
+<<<<<<< Updated upstream
             <entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+=======
+            <entry key="port_spec_class" type="xstring" value="org.knime.database.port.DBDataPortObjectSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.database.port.DBDataPortObject"/>
+            <entry key="port_object_summary" type="xstring" value="SQLite c94017a0-f0e6-4d38-8a6e-57316fd1b48c"/>
+            <entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
+            <entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
+            <entry key="port_dir_location" type="xstring" value="port_2"/>
+>>>>>>> Stashed changes
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<<<<<<< Updated upstream
         <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+=======
+        <entry key="file_store_id" type="xstring" value="a3a5f93c-1d21-4699-bad4-2fe937e0e832"/>
+>>>>>>> Stashed changes
     </config>
 </config>

@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
     <entry key="node_file" type="xstring" value="settings.xml"/>
+<<<<<<< Updated upstream
     <config key="flow_stack"/>
+=======
+    <config key="flow_stack">
+        <config key="Variable_0">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="backupfoldername_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\BACKUPS\2026-09-15 10-23-48"/>
+        </config>
+        <config key="Variable_1">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="dbfilename_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\DATABASES\Trade_Data.db"/>
+        </config>
+        <config key="Variable_2">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="modeldb_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\DATABASES\model_database.db"/>
+        </config>
+        <config key="Variable_3">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="master_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution"/>
+        </config>
+        <config key="Variable_4">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="rawData_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\RAW_INPUT"/>
+        </config>
+        <config key="Variable_5">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="output_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\OUTPUT_FILES"/>
+        </config>
+        <config key="Variable_6">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="archive_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\ARCHIVE_RAWDATA"/>
+        </config>
+        <config key="Variable_7">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="databases_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\DATABASES"/>
+        </config>
+        <config key="Variable_8">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="n8n_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\N8N"/>
+        </config>
+        <config key="Variable_9">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="backups_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\BACKUPS"/>
+        </config>
+        <config key="Variable_10">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="logs_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\logs"/>
+        </config>
+        <config key="Variable_11">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="inbound_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\N8N\INBOUND"/>
+        </config>
+        <config key="Variable_12">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="processed_location_location"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\N8N\PROCESSED"/>
+        </config>
+    </config>
+>>>>>>> Stashed changes
     <config key="internal_node_subsettings">
         <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
     </config>
@@ -105,6 +214,10 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<<<<<<< Updated upstream
         <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+=======
+        <entry key="file_store_id" type="xstring" value="160175d1-8165-40b8-bdab-adaf5263ac3e"/>
+>>>>>>> Stashed changes
     </config>
 </config>

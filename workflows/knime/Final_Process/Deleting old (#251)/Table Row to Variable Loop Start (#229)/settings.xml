@@ -23,6 +23,38 @@
             <entry key="class" type="xstring" value="STRING"/>
             <entry key="value" type="xstring" value=""/>
         </config>
+<<<<<<< Updated upstream
+=======
+        <config key="Loop_Execute_4">
+            <entry key="type" type="xstring" value="loopcontext_execute"/>
+        </config>
+        <config key="Variable_5">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="maxIterations"/>
+            <entry key="class" type="xstring" value="INTEGER"/>
+            <entry key="value" type="xint" value="5"/>
+        </config>
+        <config key="Variable_6">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="currentIteration"/>
+            <entry key="class" type="xstring" value="INTEGER"/>
+            <entry key="value" type="xint" value="4"/>
+        </config>
+        <config key="Variable_7">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="RowID"/>
+            <entry key="class" type="xstring" value="STRING"/>
+            <entry key="value" type="xstring" value="Row0"/>
+        </config>
+        <config key="Variable_8">
+            <entry key="type" type="xstring" value="variable"/>
+            <entry key="name" type="xstring" value="Path"/>
+            <entry key="class" type="xstring" value="FSLocation"/>
+            <entry key="location_present" type="xboolean" value="true"/>
+            <entry key="file_system_type" type="xstring" value="LOCAL"/>
+            <entry key="path" type="xstring" value="C:\TRADE_DATA\Local-Execution\BACKUPS\2026-08-25 14-10-32"/>
+        </config>
+>>>>>>> Stashed changes
     </config>
     <config key="internal_node_subsettings">
         <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
@@ -106,6 +138,10 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<<<<<<< Updated upstream
         <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+=======
+        <entry key="file_store_id" type="xstring" value="13cb6275-7710-4944-a7f7-e49080919e1d"/>
+>>>>>>> Stashed changes
     </config>
 </config>
