@@ -132,14 +132,14 @@
             <entry key="index" type="xint" value="1"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 41, Cols: 19"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 2, Cols: 19"/>
             <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
         <config key="port_2">
             <entry key="index" type="xint" value="2"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.database.port.DBDataPortObjectSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.database.port.DBDataPortObject"/>
-            <entry key="port_object_summary" type="xstring" value="SQLite c94017a0-f0e6-4d38-8a6e-57316fd1b48c"/>
+            <entry key="port_object_summary" type="xstring" value="SQLite 2d1da9ed-6e23-4f52-bc89-a37274cd3682"/>
             <entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
             <entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
             <entry key="port_dir_location" type="xstring" value="port_2"/>
@@ -147,6 +147,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="a3a5f93c-1d21-4699-bad4-2fe937e0e832"/>
+        <entry key="file_store_id" type="xstring" value="01520d09-c0b5-4496-93ad-ea69b74eea3f"/>
     </config>
 </config>

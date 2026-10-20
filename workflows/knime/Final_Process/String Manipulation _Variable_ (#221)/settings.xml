@@ -6,7 +6,7 @@
             <entry key="type" type="xstring" value="variable"/>
             <entry key="name" type="xstring" value="backupfoldername"/>
             <entry key="class" type="xstring" value="STRING"/>
-            <entry key="value" type="xstring" value="C:\TRADE_DATA\Local-Execution\BACKUPS\2026-09-15 10-23-48"/>
+            <entry key="value" type="xstring" value="C:\TRADE_DATA\Local-Execution\BACKUPS\2026-10-16 14-15-07"/>
         </config>
     </config>
     <config key="internal_node_subsettings">
@@ -49,6 +49,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="8c1a1828-1815-4245-b519-18ae03ed6862"/>
+        <entry key="file_store_id" type="xstring" value="a0cd6bfd-3177-4dcf-a1fb-679ec4cfd233"/>
     </config>
 </config>
