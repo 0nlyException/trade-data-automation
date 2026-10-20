@@ -1,0 +1,198 @@
+{
+  "name": "Trade Automation Error Handler",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1c93aba3-cc2f-48b6-b493-be66bf21dbfa",
+      "name": "Catch Workflow Error"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0c27e489-351f-42d2-a6bc-f91b763a68b7",
+              "name": "error_timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "c512ed20-f977-4356-80ef-366da65bd084",
+              "name": "workflow_name",
+              "value": "={{ $json.workflow?.name || 'Unknown Workflow' }}",
+              "type": "string"
+            },
+            {
+              "id": "ef981477-8e50-4582-bb46-20699d364941",
+              "name": "workflow_id",
+              "value": "={{ String($json.workflow?.id || '') }}",
+              "type": "string"
+            },
+            {
+              "id": "62d3a34a-3d49-4721-bff5-73f2f71fef26",
+              "name": "execution_id",
+              "value": "={{ String($json.execution?.id || '') }}",
+              "type": "string"
+            },
+            {
+              "id": "b4008bf3-c937-4105-b8f8-5cc2e1e0624e",
+              "name": "execution_mode",
+              "value": "={{ $json.execution?.mode || $json.trigger?.mode || 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "1bff710b-8dd8-4dbf-a67c-9d2a0129739c",
+              "name": "failed_node",
+              "value": "={{ $json.execution?.lastNodeExecuted || $json.trigger?.error?.node?.name || 'Unknown Node' }}",
+              "type": "string"
+            },
+            {
+              "id": "741455c9-4cd7-4ad1-a56a-3115067f096b",
+              "name": "error_message",
+              "value": "={{ $json.execution?.error?.message || $json.trigger?.error?.message || 'No error message provided' }}",
+              "type": "string"
+            },
+            {
+              "id": "dea4d3e8-87a2-459d-950f-f39cc437161b",
+              "name": "error_stack",
+              "value": "={{ $json.execution?.error?.stack || $json.trigger?.error?.cause?.stack || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "39d8c13e-b8b1-49d2-be18-33add0235302",
+              "name": "execution_url",
+              "value": "={{ $json.execution?.url || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "4d5ad57c-afad-466a-b3a5-ef37c61a7045",
+              "name": "retry_of",
+              "value": "={{ String($json.execution?.retryOf || '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c91203bf-55ea-484a-9f8c-9657de571629",
+      "name": "Prepare Error Record"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const errorRecord = {\n  error_timestamp: $json.error_timestamp,\n  workflow_name: $json.workflow_name,\n  workflow_id: $json.workflow_id,\n  execution_id: $json.execution_id,\n  execution_mode: $json.execution_mode,\n  failed_node: $json.failed_node,\n  error_message: $json.error_message,\n  error_stack: $json.error_stack,\n  execution_url: $json.execution_url,\n  retry_of: $json.retry_of\n};\n\n// Remove characters that Windows does not allow in filenames.\nconst safeWorkflowName = String(\n  $json.workflow_name || \"Unknown_Workflow\"\n)\n  .replace(/[<>:\"/\\\\|?*]/g, \"_\")\n  .replace(/\\s+/g, \"_\");\n\n// Use the execution ID when available.\n// The timestamp provides a unique fallback.\nconst uniqueId =\n  $json.execution_id ||\n  new Date().toISOString()\n    .replace(/[:.]/g, \"-\");\n\nconst filename =\n  `Error_${safeWorkflowName}_${uniqueId}.json`;\n\nreturn {\n  json: {\n    ...errorRecord,\n    error_log_json: JSON.stringify(\n      errorRecord,\n      null,\n      2\n    ),\n    error_log_filename: filename,\n    error_log_path:\n      `C:\\\\TRADE_DATA\\\\Local-Execution\\\\ERROR_LOGS\\\\${filename}`\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "43a8d3f7-144a-4577-8ecb-dae94025e316",
+      "name": "Create Error Log Entry"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "error_log_json",
+        "options": {
+          "encoding": "utf8",
+          "fileName": "={{ $json.error_log_filename }}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        0
+      ],
+      "id": "4c4c1581-ca7e-4a9c-aaf1-674c356ea413",
+      "name": "Create Error Log File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.error_log_path }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        0
+      ],
+      "id": "a5a0f5d7-76eb-466a-8a33-95ab42603abc",
+      "name": "Save Error Log"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Catch Workflow Error": {
+      "main": [
+        [
+          {
+            "node": "Prepare Error Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Error Record": {
+      "main": [
+        [
+          {
+            "node": "Create Error Log Entry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Error Log Entry": {
+      "main": [
+        [
+          {
+            "node": "Create Error Log File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Error Log File": {
+      "main": [
+        [
+          {
+            "node": "Save Error Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "46b51410-08b9-4443-9ec1-f55daf990053",
+  "meta": {
+    "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
+  },
+  "id": "GB3j1HiHByVPWAYr",
+  "tags": []
+}
