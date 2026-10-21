@@ -37,7 +37,7 @@
             </config>
             <config key="ifSchemaChangesParams">
                 <entry key="ignoreSchemaChange" type="xboolean" value="false"/>
-                <entry key="ifSchemaChangesOption" type="xstring" value="FAIL"/>
+                <entry key="ifSchemaChangesOption" type="xstring" value="USE_NEW_SCHEMA"/>
             </config>
             <config key="multiFileReaderParams">
                 <entry key="appendPathColumn" type="xstring" isnull="true" value=""/>
@@ -164,12 +164,12 @@
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="5">
-                            <entry key="name" type="xstring" value="Product Category"/>
+                            <entry key="name" type="xstring" value="Product"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="6">
-                            <entry key="name" type="xstring" value="Product"/>
+                            <entry key="name" type="xstring" value="Product Category"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
@@ -194,42 +194,42 @@
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="11">
-                            <entry key="name" type="xstring" value="row_id"/>
+                            <entry key="name" type="xstring" value="Exporter Country"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="12">
-                            <entry key="name" type="xstring" value="Manufacturer"/>
+                            <entry key="name" type="xstring" value="row_id"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="13">
-                            <entry key="name" type="xstring" value="Product_Type"/>
+                            <entry key="name" type="xstring" value="Manufacturer"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="14">
-                            <entry key="name" type="xstring" value="Model"/>
+                            <entry key="name" type="xstring" value="Product_Type"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="15">
-                            <entry key="name" type="xstring" value="Competitor_Check"/>
+                            <entry key="name" type="xstring" value="Model"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
                         <config key="16">
+                            <entry key="name" type="xstring" value="Competitor_Check"/>
+                            <entry key="type" type="xstring" value="STRING"/>
+                            <entry key="hasType" type="xboolean" value="true"/>
+                        </config>
+                        <config key="17">
                             <entry key="name" type="xstring" value="Confidence_Score"/>
                             <entry key="type" type="xstring" value="DOUBLE"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
-                        <config key="17">
-                            <entry key="name" type="xstring" value="Match_Reason"/>
-                            <entry key="type" type="xstring" value="STRING"/>
-                            <entry key="hasType" type="xboolean" value="true"/>
-                        </config>
                         <config key="18">
-                            <entry key="name" type="xstring" value="Exporter Country"/>
+                            <entry key="name" type="xstring" value="Match_Reason"/>
                             <entry key="type" type="xstring" value="STRING"/>
                             <entry key="hasType" type="xboolean" value="true"/>
                         </config>
@@ -859,12 +859,12 @@
             <entry key="index" type="xint" value="1"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 43, Cols: 19"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 45, Cols: 19"/>
             <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="164fd839-d039-4f99-9977-b8db41b160f8"/>
+        <entry key="file_store_id" type="xstring" value="29f34b09-99d0-405c-afb3-ce5676cc9295"/>
     </config>
 </config>

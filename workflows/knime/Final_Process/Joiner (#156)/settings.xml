@@ -10,11 +10,121 @@
         <config key="matchingCriteria">
             <config key="0">
                 <config key="leftTableColumnV2">
-                    <entry key="regularChoice" type="xstring" value="row_id"/>
+                    <entry key="regularChoice" type="xstring" value="Importer Name"/>
                     <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
                 </config>
                 <config key="rightTableColumnV2">
-                    <entry key="regularChoice" type="xstring" value="row_id"/>
+                    <entry key="regularChoice" type="xstring" value="Importer Name"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="1">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Importer Country"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Importer Country"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="2">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Exporter Name"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Exporter Name"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="3">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Exporter Country"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Exporter Country"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="4">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="HS Code"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="HS Code"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="5">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product Description"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product Description"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="6">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="7">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product Category"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Product Category"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="8">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Quantity"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Quantity"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="9">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Quantity Unit"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Quantity Unit"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="10">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Total Price (USD)"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Total Price (USD)"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+            </config>
+            <config key="11">
+                <config key="leftTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Unit Price (USD/QTY)"/>
+                    <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
+                </config>
+                <config key="rightTableColumnV2">
+                    <entry key="regularChoice" type="xstring" value="Unit Price (USD/QTY)"/>
                     <entry key="specialChoice_Internals" type="xstring" isnull="true" value=""/>
                 </config>
             </config>
@@ -103,7 +213,7 @@
         <entry key="duplicateHandling" type="xstring" value="APPEND_SUFFIX"/>
         <entry key="suffix" type="xstring" value=" (Right)"/>
         <entry key="outputUnmatchedRowsToSeparatePorts" type="xboolean" value="true"/>
-        <entry key="rowKeyFactory" type="xstring" value="CONCATENATE"/>
+        <entry key="rowKeyFactory" type="xstring" value="SEQUENTIAL"/>
         <entry key="rowKeySeparator" type="xstring" value="_"/>
         <entry key="outputRowOrder" type="xstring" value="ARBITRARY"/>
         <entry key="maxOpenFiles" type="xint" value="200"/>
@@ -146,26 +256,26 @@
             <entry key="index" type="xint" value="1"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 0, Cols: 38"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 76, Cols: 27"/>
             <entry key="port_dir_location" type="xstring" value="port_1"/>
         </config>
         <config key="port_2">
             <entry key="index" type="xint" value="2"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 2, Cols: 19"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 0, Cols: 19"/>
             <entry key="port_dir_location" type="xstring" value="port_2"/>
         </config>
         <config key="port_3">
             <entry key="index" type="xint" value="3"/>
             <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
             <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-            <entry key="port_object_summary" type="xstring" value="Rows: 595, Cols: 20"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 103, Cols: 20"/>
             <entry key="port_dir_location" type="xstring" value="port_3"/>
         </config>
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="eaf372c0-b78c-4628-be3f-26a839865878"/>
+        <entry key="file_store_id" type="xstring" value="2ee303e3-91aa-499f-a07c-77cd85c10344"/>
     </config>
 </config>
