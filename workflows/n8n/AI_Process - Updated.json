@@ -1,11 +1,5 @@
 {
-  "updatedAt": "2026-07-09T06:31:38.211Z",
-  "createdAt": "2026-05-28T05:49:18.153Z",
-  "id": "OH3HqIRkz0m1PPnF",
-  "name": "AI_Process",
-  "description": null,
-  "active": true,
-  "isArchived": false,
+  "name": "AI_Process - Updated",
   "nodes": [
     {
       "parameters": {
@@ -14,24 +8,11 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -80,
-        80
+        -432,
+        -224
       ],
-      "id": "6bbb7521-c7db-430b-9a86-b68091fd3949",
+      "id": "b0255000-0f49-4167-be6c-3d46c756424b",
       "name": "When Executed by Another Workflow"
-    },
-    {
-      "parameters": {
-        "jsCode": "// 1. Grab the single output box from the AI Agent\nconst aiResponse = $input.first().json.output;\n\n// 2. Map over the array of 10 answers and wrap each one in n8n's required 'json' format\nconst unbundledItems = aiResponse.map(item => {\n    return {\n        json: item\n    };\n});\n\n// 3. Return the 10 separate rows to the workflow\nreturn unbundledItems;"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        624,
-        80
-      ],
-      "id": "e3d6ca2a-dbaf-405d-b64c-8237a6f03f83",
-      "name": "Unwrap"
     },
     {
       "parameters": {
@@ -41,10 +22,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        416,
-        368
+        480,
+        192
       ],
-      "id": "783ac625-47bb-409d-a4c3-1014831e452b",
+      "id": "5c6f05ac-a3bd-4933-98d9-8f9354dcf4a8",
       "name": "Structured Output Parser"
     },
     {
@@ -59,11 +40,40 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        224,
-        80
+        304,
+        0
       ],
-      "id": "e6c7505b-7f27-4acf-a8ca-995efef89c5d",
+      "id": "6cb69e1b-3983-4bab-b191-e61cfd999065",
       "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "qwen/qwen3.7-flash",
+          "mode": "list",
+          "cachedResultName": "qwen/qwen3.7-flash"
+        },
+        "builtInTools": {},
+        "options": {
+          "maxTokens": 4096,
+          "temperature": 0.3
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        208
+      ],
+      "id": "629747d6-3558-45b7-9679-1e6692efe22c",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "9T17D3XeR8e3APSH",
+          "name": "OpenAI account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -82,25 +92,88 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        112,
-        368
+        -176,
+        320
       ],
-      "id": "2e35e143-0893-4d59-a32d-30555e6c3846",
-      "name": "OpenAI Chat Model",
+      "id": "d8422045-98e3-4692-b925-5747d74bf6c6",
+      "name": "OpenAI Chat Model1",
       "credentials": {
         "openAiApi": {
-          "id": "80tePkx9BfAbjOE8",
-          "name": "OpenAI account"
+          "id": "9T17D3XeR8e3APSH",
+          "name": "OpenAI account 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Grab the single output box from the AI Agent\nconst aiResponse = $input.first().json.output;\n\n// 2. Map over the array of 10 answers and wrap each one in n8n's required 'json' format\nconst unbundledItems = aiResponse.map(item => {\n    return {\n        json: item\n    };\n});\n\n// 3. Return the 10 separate rows to the workflow\nreturn unbundledItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        736,
+        0
+      ],
+      "id": "6bbf5e57-f8a5-4cfa-b977-c02ccc96571d",
+      "name": "Unwrap1"
+    },
+    {
+      "parameters": {
+        "fileSelector": "C:\\TRADE_DATA\\Local-Execution\\prompts\\ai_instructions.txt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        -416,
+        32
+      ],
+      "id": "d3b8ece5-683d-4dc8-8662-8c8fc20e6fdb",
+      "name": "Read AI Instructions"
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "destinationKey": "system_instructions",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -192,
+        32
+      ],
+      "id": "2e3a78b0-ba67-43e4-bc6d-591ada91e8ad",
+      "name": "Extract AI Instructions"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        96,
+        16
+      ],
+      "id": "14c3296a-6816-4633-8a88-d02741365c7f",
+      "name": "Merge Batch and Instructions"
     }
   ],
+  "pinData": {},
   "connections": {
     "When Executed by Another Workflow": {
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "Read AI Instructions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge Batch and Instructions",
             "type": "main",
             "index": 0
           }
@@ -122,7 +195,7 @@
       "main": [
         [
           {
-            "node": "Unwrap",
+            "node": "Unwrap1",
             "type": "main",
             "index": 0
           }
@@ -139,41 +212,57 @@
           }
         ]
       ]
+    },
+    "Read AI Instructions": {
+      "main": [
+        [
+          {
+            "node": "Extract AI Instructions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract AI Instructions": {
+      "main": [
+        [
+          {
+            "node": "Merge Batch and Instructions",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Batch and Instructions": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
+  "active": true,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate"
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Singapore",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "GB3j1HiHByVPWAYr",
+    "saveDataSuccessExecution": "all"
   },
-  "staticData": null,
-  "meta": null,
-  "pinData": {},
-  "versionId": "11cef143-bcbb-43b1-bd2c-0e6c400f48d5",
-  "activeVersionId": "11cef143-bcbb-43b1-bd2c-0e6c400f48d5",
-  "versionCounter": 120,
-  "triggerCount": 0,
-  "tags": [],
-  "shared": [
-    {
-      "updatedAt": "2026-05-28T05:49:18.159Z",
-      "createdAt": "2026-05-28T05:49:18.159Z",
-      "role": "workflow:owner",
-      "workflowId": "OH3HqIRkz0m1PPnF",
-      "projectId": "ySMohz6WFKH5tAbg",
-      "project": {
-        "updatedAt": "2026-05-19T07:10:33.827Z",
-        "createdAt": "2026-05-19T07:09:02.777Z",
-        "id": "ySMohz6WFKH5tAbg",
-        "name": "Siranj ks <siranj.sasi@rohde-schwarz.com>",
-        "type": "personal",
-        "icon": null,
-        "description": null,
-        "creatorId": "cc3354fe-08cb-411e-8459-4a7fa20e3c8b"
-      }
-    }
-  ],
-  "versionMetadata": {
-    "name": "Version 11cef143",
-    "description": ""
-  }
+  "versionId": "bcb81cab-6dfc-455e-bf37-bbd6eac2e160",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
+  },
+  "id": "IjrzDNAncsPxNAv0",
+  "tags": []
 }

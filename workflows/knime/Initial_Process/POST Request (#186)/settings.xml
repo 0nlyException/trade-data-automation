@@ -65,7 +65,7 @@
         <entry key="readTimeout" type="xint" value="120"/>
         <entry key="allowChunking" type="xboolean" value="false"/>
         <entry key="SSL ignore hostname errors" type="xboolean" value="false"/>
-        <entry key="SSL trust all" type="xboolean" value="false"/>
+        <entry key="SSL trust all" type="xboolean" value="true"/>
         <config key="Request header keys">
             <entry key="array-size" type="xint" value="0"/>
         </config>
@@ -110,9 +110,9 @@
             </config>
         </config>
         <entry key="Body column name" type="xstring" value="body"/>
-        <entry key="outputErrorCause" type="xboolean" value="false"/>
+        <entry key="outputErrorCause" type="xboolean" value="true"/>
         <entry key="Use constant request body" type="xboolean" value="true"/>
-        <entry key="Constant request body" type="xstring" value=""/>
+        <entry key="Constant request body" type="xstring" value="{}"/>
         <entry key="Request body column" type="xstring" isnull="true" value=""/>
     </config>
     <config key="variables"/>
