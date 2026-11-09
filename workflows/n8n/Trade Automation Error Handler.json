@@ -124,7 +124,7 @@
     {
       "parameters": {
         "operation": "write",
-        "fileName": "={{ $json.error_log_path }}",
+        "fileName": "={{ $('Create Error Log Entry').item.json.error_log_path }}",
         "options": {}
       },
       "type": "n8n-nodes-base.readWriteFile",
@@ -137,7 +137,67 @@
       "name": "Save Error Log"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Catch Workflow Error": [
+      {
+        "json": {
+          "execution": {
+            "id": "862",
+            "url": "http://localhost:5678/workflow/ka1cYWREyvFqSSg4/executions/862",
+            "error": {
+              "level": "warning",
+              "tags": {},
+              "timestamp": 1792550374853,
+              "context": {
+                "itemIndex": 0
+              },
+              "functionality": "regular",
+              "name": "NodeOperationError",
+              "node": {
+                "parameters": {
+                  "executeOnce": true,
+                  "command": "=cmd.exe /c \"echo active > C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\"\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\""
+                },
+                "type": "n8n-nodes-base.executeCommand",
+                "typeVersion": 1,
+                "position": [
+                  0,
+                  0
+                ],
+                "id": "2f5a9b6a-9d87-4bad-a5aa-926297a66f58",
+                "name": "Execute Command"
+              },
+              "messages": [],
+              "message": "Command failed: cmd.exe /c \"echo active > C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\"\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\"\n^C^C",
+              "stack": "NodeOperationError: Command failed: cmd.exe /c \"echo active > C:\\TRADE_DATA\\Local-Execution\\logs\\stage3.txt & \"\"%USERPROFILE%\\AppData\\Local\\Programs\\KNIME\\knime.exe\"\" -consoleLog -application com.nodepit.batch.application.NodePitBatchExecutor --reset \"C:\\TRADE_DATA\\trade-data-automation\\workflows\\knime\\Final_Process\"\"\n^C^C\n    at ExecuteContext.execute (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-nodes-base\\nodes\\ExecuteCommand\\ExecuteCommand.node.ts:101:12)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at WorkflowExecute.executeNode (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1048:9)\n    at WorkflowExecute.runNode (C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1239:11)\n    at C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:1687:27\n    at C:\\Users\\Abano\\AppData\\Roaming\\npm\\node_modules\\n8n\\node_modules\\n8n-core\\src\\execution-engine\\workflow-execute.ts:2339:11"
+            },
+            "lastNodeExecuted": "Execute Command",
+            "mode": "webhook",
+            "executionContext": {
+              "version": 1,
+              "establishedAt": 1792550254642,
+              "source": "webhook",
+              "redaction": {
+                "version": 1,
+                "policy": "none"
+              },
+              "triggerNode": {
+                "name": "Webhook1",
+                "type": "n8n-nodes-base.webhook"
+              }
+            }
+          },
+          "workflow": {
+            "id": "ka1cYWREyvFqSSg4",
+            "name": "Phase1_Main"
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
   "connections": {
     "Catch Workflow Error": {
       "main": [
@@ -189,7 +249,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "46b51410-08b9-4443-9ec1-f55daf990053",
+  "versionId": "248a4a8d-159e-415b-b6f8-139a3afd057d",
   "meta": {
     "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
   },

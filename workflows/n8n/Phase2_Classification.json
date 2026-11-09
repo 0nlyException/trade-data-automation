@@ -123,7 +123,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Keeps ONLY the columns the AI needs to save API token costs\nreturn $input.all().map(item => {\n    return {\n        json: {\n            // CRITICAL: We must keep the row_id so we can merge it later!\n            row_id: item.json.row_id,\n            Raw_Model: item.json.Raw_Model || \"NotFound\",\n            Product: item.json.Product || item.json.product || \"\",\n            Product_Description: item.json[\"Product Description\"] || item.json.Description || \"\",\n            Exporter_Name: item.json[\"Exporter Name\"] || item.json.exporter_name || \"\"\n        }\n    };\n});"
+        "jsCode": "return $input.all().map(item => {\n    return {\n        json: {\n            row_id: item.json.row_id,\n\n            Raw_Model:\n                item.json.Raw_Model || \"NotFound\",\n\n            Product:\n                item.json.Product ||\n                item.json[\"Product(EN)\"] ||\n                item.json.product ||\n                \"\",\n\n            Product_Description:\n                item.json[\"Product Description\"] ||\n                item.json.Product_Description ||\n                item.json.Description ||\n                \"\",\n\n            Exporter_Name:\n                item.json[\"Exporter Name\"] ||\n                item.json.Exporter_Name ||\n                item.json.exporter_name ||\n                \"\",\n\n            Importer_Name:\n                item.json[\"Importer Name\"] ||\n                item.json.Importer_Name ||\n                item.json.importer_name ||\n                \"\",\n\n            Importer_Address:\n                item.json[\"Importer Add.\"] ||\n                item.json.Importer_Address ||\n                item.json.importer_address ||\n                \"\",\n\n            Importer_Country:\n                item.json[\"Importer Country(EN)\"] ||\n                item.json.Importer_Country ||\n                item.json.importer_country ||\n                \"\"\n        }\n    };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -378,12 +378,25 @@
     },
     {
       "parameters": {
+        "jsCode": "return {\n    json: {\n        row_id: item.json.row_id,\n        Raw_Model: item.json.Raw_Model || \"NotFound\",\n        Product: item.json.Product || item.json.product || \"\",\n        Product_Description: item.json[\"Product Description\"] || item.json.Description || \"\",\n        Exporter_Name: item.json[\"Exporter Name\"] || item.json.exporter_name || \"\"\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -944,
+        896
+      ],
+      "id": "f9b8f159-7cce-413c-a918-f0282b3c811e",
+      "name": "Strip Data for AI1"
+    },
+    {
+      "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "xe899v2LXNpyhLeR",
+          "value": "IjrzDNAncsPxNAv0",
           "mode": "list",
-          "cachedResultUrl": "/workflow/xe899v2LXNpyhLeR",
-          "cachedResultName": "AI_Process"
+          "cachedResultUrl": "/workflow/IjrzDNAncsPxNAv0",
+          "cachedResultName": "AI_Process - Copy"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -402,10 +415,10 @@
       "typeVersion": 1.3,
       "position": [
         576,
-        784
+        800
       ],
       "id": "2b8efd9e-8123-415b-ba36-2d713ce88c69",
-      "name": "Call 'AI_Process'"
+      "name": "Call 'AI_Process - Copy'"
     }
   ],
   "pinData": {},
@@ -506,7 +519,7 @@
       "main": [
         [
           {
-            "node": "Call 'AI_Process'",
+            "node": "Call 'AI_Process - Copy'",
             "type": "main",
             "index": 0
           }
@@ -645,7 +658,7 @@
         ]
       ]
     },
-    "Call 'AI_Process'": {
+    "Call 'AI_Process - Copy'": {
       "main": [
         [
           {
@@ -669,10 +682,10 @@
     "timeSavedMode": "fixed",
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": false,
-    "errorWorkflow": "wbmkoXY4sJvl5RvQ",
+    "errorWorkflow": "GB3j1HiHByVPWAYr",
     "saveDataSuccessExecution": "all"
   },
-  "versionId": "b2c48da9-ef36-4751-97f8-4f2824ac250e",
+  "versionId": "e9b37d23-dfbf-4c4e-8642-30441b213ea2",
   "meta": {
     "instanceId": "f7bbd0c9cabaebf440c67c7c2258a4fa38782464971447efe55e1f94f1a13dbe"
   },
